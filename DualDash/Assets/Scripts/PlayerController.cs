@@ -52,7 +52,10 @@ void Awake()
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        CheckGround(collision);
+        if (collision.gameObject.CompareTag("FLOOR"))
+        { 
+            canJump = true;
+        }
     }
 
     void OnCollisionStay2D(Collision2D collision)

@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   isTopPlayer: 0
   jumpForce: 7
+  canJump: 1
 --- !u!50 &76676625
 Rigidbody2D:
   serializedVersion: 5
@@ -455,6 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   isTopPlayer: 1
   jumpForce: 7
+  canJump: 1
 --- !u!50 &236932747
 Rigidbody2D:
   serializedVersion: 5
@@ -633,7 +635,7 @@ GameObject:
   - component: {fileID: 1793144806}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: FLOOR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
