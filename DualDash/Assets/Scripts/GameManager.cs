@@ -6,6 +6,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    private IScoreService scoreService;
     public TMP_Text scoreText;
     public float score;
     public static GameManager Instance;
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        scoreService = new PlayerPrefsScoreService();
+
         score = 0;
         UpdateScoreText();
 
@@ -44,6 +47,13 @@ public class GameManager : MonoBehaviour
         if (IsGameOver) return;
 
         IsGameOver = true;
+
+        int finalScore = Mathf.FloorToInt(score);
+        scoreService.SaveBestScore(finalScore);
+
+        Debug.Log("Puntuación final: " + finalScore);
+        Debug.Log("Mejor puntuación: " + scoreService.GetBestScore());
+
         Time.timeScale = 0f;
 
         Debug.Log("GAME OVER");
